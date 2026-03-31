@@ -2,31 +2,27 @@
 
 Crie squads de agentes de IA que trabalham juntos — direto do seu IDE.
 
-<table align="center"><tr><td>
-<pre align="center">
-  ___  ___  ___  ___
- | $ || $ || $ || $ |   100% GRATUITO
- |___||___||___||___|   Zero custo. Zero licenca. Zero pegadinha.
-  | |  | |  | |  | |
-  |_|  |_|  |_|  |_|   Mas cada squad roda com os SEUS tokens.
-</pre>
-</td></tr></table>
+```
+ ╔═══╗ ╔═══╗ ╔═══╗ ╔═══╗
+ ║ $ ║ ║ $ ║ ║ $ ║ ║ $ ║   100% GRATUITO
+ ╚═╤═╝ ╚═╤═╝ ╚═╤═╝ ╚═╤═╝   Zero custo. Zero licenca. Zero pegadinha.
+   │     │     │     │
+   ╵     ╵     ╵     ╵       Mas cada squad roda com os SEUS tokens.
+```
 
 > [!IMPORTANT]
 > **Este projeto e 100% gratuito e open source.**
 > Voce so gasta os tokens da sua propria API (Claude, Gemini, etc).
 > Nos nao cobramos nada. Nunca.
 
-<table align="center"><tr><td>
-<pre align="center">
-       ( (
-        ) )
-     ._______.
-     |       |]
-     \       /    Se esse projeto te economizou horas de trabalho,
-      '-----'     considere pagar um cafe com tokens reais :)
-</pre>
-</td></tr></table>
+```
+        ( (
+         ) )
+      .───────.
+      │       │]
+       \     /    Se esse projeto te economizou horas de trabalho,
+        `───'     considere pagar um cafe com tokens reais :)
+```
 
 <h3 align="center">
   <img src="https://img.shields.io/badge/Pix-pix%40riaworks.com.br-FF6600?style=for-the-badge&logo=pix&logoColor=white" alt="Pix: pix@riaworks.com.br" />
@@ -43,6 +39,8 @@ Se ainda nao tem o Opensquad instalado, clone o framework base:
 
 ```bash
 git clone https://github.com/renatoasse/opensquad.git
+cd opensquad
+npm install
 ```
 
 > [!TIP]
@@ -50,16 +48,34 @@ git clone https://github.com/renatoasse/opensquad.git
 
 ### 2. Instale este squad pack
 
-Abra o projeto Opensquad no seu IDE com uma LLM que tenha acesso ao terminal (recomendamos **Claude Code**) e peca:
+Abra o projeto Opensquad no seu IDE com uma LLM que tenha acesso ao terminal — recomendamos o [Claude Code](https://claude.ai/claude-code).
+
+Cole este prompt:
 
 ```
-Acesse https://github.com/riaworks/opensquad-riaworks e faca a
-instalacao, merge e registro dos squads no meu projeto Opensquad.
+Clone o repositorio https://github.com/riaworks/opensquad-riaworks.git
+em uma pasta temporaria e copie para dentro do meu projeto Opensquad:
+  - squads/         → squads/
+  - skills/         → skills/
+  - materiais/      → materiais/
+  - _opensquad/_memory/ → _opensquad/_memory/
+Depois registre os squads com /opensquad e remova a pasta temporaria.
 ```
 
-A LLM vai clonar este repositorio, copiar os squads, skills e configuracoes para dentro do seu projeto Opensquad e registrar tudo automaticamente.
+A LLM vai fazer o merge automaticamente: clonar, copiar os squads e skills, e registrar tudo no seu Opensquad.
 
-### 3. Use
+### 3. Configure suas APIs
+
+Preencha o `.env` na raiz do projeto com suas chaves:
+
+```env
+GEMINI_API_KEY=sua-chave-aqui
+INSTAGRAM_ACCESS_TOKEN=seu-token-aqui
+INSTAGRAM_USER_ID=seu-id-aqui
+IMGBB_API_KEY=sua-chave-aqui
+```
+
+### 4. Use
 
 Abra o projeto no seu IDE e digite:
 
@@ -120,31 +136,27 @@ npx serve squads/<nome-do-squad>/dashboard
 
 Create AI squads that work together — right from your IDE.
 
-<table align="center"><tr><td>
-<pre align="center">
-  ___  ___  ___  ___
- | $ || $ || $ || $ |   100% FREE
- |___||___||___||___|   No cost. No license. No catch.
-  | |  | |  | |  | |
-  |_|  |_|  |_|  |_|   But each squad runs on YOUR tokens.
-</pre>
-</td></tr></table>
+```
+ ╔═══╗ ╔═══╗ ╔═══╗ ╔═══╗
+ ║ $ ║ ║ $ ║ ║ $ ║ ║ $ ║   100% FREE
+ ╚═╤═╝ ╚═╤═╝ ╚═╤═╝ ╚═╤═╝   No cost. No license. No catch.
+   │     │     │     │
+   ╵     ╵     ╵     ╵       But each squad runs on YOUR tokens.
+```
 
 > [!IMPORTANT]
 > **This project is 100% free and open source.**
 > You only spend your own API tokens (Claude, Gemini, etc).
 > We charge nothing. Ever.
 
-<table align="center"><tr><td>
-<pre align="center">
-       ( (
-        ) )
-     ._______.
-     |       |]
-     \       /    If this project saved you hours of work,
-      '-----'     consider buying us a coffee with real tokens :)
-</pre>
-</td></tr></table>
+```
+        ( (
+         ) )
+      .───────.
+      │       │]
+       \     /    If this project saved you hours of work,
+        `───'     consider buying us a coffee with real tokens :)
+```
 
 <h3 align="center">
   <img src="https://img.shields.io/badge/Pix-pix%40riaworks.com.br-FF6600?style=for-the-badge&logo=pix&logoColor=white" alt="Pix: pix@riaworks.com.br" />
@@ -161,6 +173,8 @@ If you don't have Opensquad installed yet, clone the base framework:
 
 ```bash
 git clone https://github.com/renatoasse/opensquad.git
+cd opensquad
+npm install
 ```
 
 > [!TIP]
@@ -168,16 +182,34 @@ git clone https://github.com/renatoasse/opensquad.git
 
 ### 2. Install this squad pack
 
-Open the Opensquad project in your IDE with an LLM that has terminal access (we recommend **Claude Code**) and ask:
+Open the Opensquad project in your IDE with an LLM that has terminal access — we recommend [Claude Code](https://claude.ai/claude-code).
+
+Paste this prompt:
 
 ```
-Access https://github.com/riaworks/opensquad-riaworks and install,
-merge and register the squads into my Opensquad project.
+Clone the repository https://github.com/riaworks/opensquad-riaworks.git
+into a temporary folder and copy into my Opensquad project:
+  - squads/         → squads/
+  - skills/         → skills/
+  - materiais/      → materiais/
+  - _opensquad/_memory/ → _opensquad/_memory/
+Then register the squads with /opensquad and remove the temporary folder.
 ```
 
-The LLM will clone this repository, copy the squads, skills and configurations into your Opensquad project and register everything automatically.
+The LLM will handle the merge automatically: clone, copy squads and skills, and register everything in your Opensquad.
 
-### 3. Use it
+### 3. Configure your APIs
+
+Fill in the `.env` at the project root with your keys:
+
+```env
+GEMINI_API_KEY=your-key-here
+INSTAGRAM_ACCESS_TOKEN=your-token-here
+INSTAGRAM_USER_ID=your-id-here
+IMGBB_API_KEY=your-key-here
+```
+
+### 4. Use it
 
 Open the project in your IDE and type:
 
@@ -236,24 +268,4 @@ npx serve squads/<squad-name>/dashboard
 
 ## License
 
-MIT License
-
-Copyright (c) 2026 Riaworks
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+MIT License — see [LICENSE](LICENSE) for details.
