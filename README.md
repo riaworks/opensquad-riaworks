@@ -2,6 +2,41 @@
 
 Crie squads de agentes de IA que trabalham juntos — direto do seu IDE.
 
+<div align="center">
+
+```
+  ___  ___  ___  ___
+ | $|| $|| $|| $|   100% GRATUITO
+ |___||___||___||___|   Zero custo. Zero licenca. Zero pegadinha.
+  | |  | |  | |  | |
+  |_|  |_|  |_|  |_|   Mas cada squad roda com os SEUS tokens.
+```
+
+### $\color{#FF6600}{\textsf{Este projeto e gratuito e open source.}}$
+
+$\color{#FF6600}{\textsf{Voce so gasta os tokens da sua propria API (Claude, Gemini, etc).}}$
+
+$\color{#FF6600}{\textsf{Nos nao cobramos nada. Nunca.}}$
+
+---
+
+```
+         ( (
+          ) )
+       ._______.
+       |       |]
+       \       /     Se esse projeto te economizou horas de trabalho,
+        `-----'      considere pagar um cafe com tokens reais :)
+```
+
+### $\color{#FF6600}{\textsf{Pix: pix@riaworks.com.br}}$
+
+*Qualquer valor ajuda a manter o projeto vivo e cafeinado.*
+
+---
+
+</div>
+
 ## Como Usar
 
 Abra esta pasta no seu IDE e digite:
@@ -62,6 +97,41 @@ npx serve squads/<nome-do-squad>/dashboard
 # Opensquad (English)
 
 Create AI squads that work together — right from your IDE.
+
+<div align="center">
+
+```
+  ___  ___  ___  ___
+ | $|| $|| $|| $|   100% FREE
+ |___||___||___||___|   No cost. No license. No catch.
+  | |  | |  | |  | |
+  |_|  |_|  |_|  |_|   But each squad runs on YOUR tokens.
+```
+
+### $\color{#FF6600}{\textsf{This project is free and open source.}}$
+
+$\color{#FF6600}{\textsf{You only spend your own API tokens (Claude, Gemini, etc).}}$
+
+$\color{#FF6600}{\textsf{We charge nothing. Ever.}}$
+
+---
+
+```
+         ( (
+          ) )
+       ._______.
+       |       |]
+       \       /     If this project saved you hours of work,
+        `-----'      consider buying us a coffee with real tokens :)
+```
+
+### $\color{#FF6600}{\textsf{Pix: pix@riaworks.com.br}}$
+
+*Any amount helps keep the project alive and caffeinated.*
+
+---
+
+</div>
 
 ## How to Use
 
