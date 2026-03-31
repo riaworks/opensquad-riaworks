@@ -64,7 +64,23 @@ Depois registre os squads com /opensquad e remova a pasta temporaria.
 
 A LLM vai fazer o merge automaticamente: clonar, copiar os squads e skills, e registrar tudo no seu Opensquad.
 
-### 3. Configure suas APIs
+### 3. Configure sua identidade
+
+Edite o arquivo `_opensquad/_memory/company.md` com os dados da **sua** marca:
+
+- Nome da empresa/canal
+- Handles das redes sociais (@seu.handle)
+- Publico-alvo, tom de voz, foco de conteudo
+- Plataformas onde voce publica
+
+Edite tambem `_opensquad/_memory/preferences.md` com seu nome e idioma.
+
+> [!NOTE]
+> O `company.md` e o arquivo mais importante — ele e carregado em toda execucao de squad e define **quem voce e** para os agentes. Sem preencher, os squads nao sabem para quem estao produzindo conteudo.
+
+Substitua o logo em `materiais/logomarca.png` pelo seu (PNG transparente recomendado).
+
+### 4. Configure suas APIs
 
 Preencha o `.env` na raiz do projeto com suas chaves:
 
@@ -75,7 +91,7 @@ INSTAGRAM_USER_ID=seu-id-aqui
 IMGBB_API_KEY=sua-chave-aqui
 ```
 
-### 4. Use
+### 5. Use
 
 Abra o projeto no seu IDE e digite:
 
@@ -198,7 +214,23 @@ Then register the squads with /opensquad and remove the temporary folder.
 
 The LLM will handle the merge automatically: clone, copy squads and skills, and register everything in your Opensquad.
 
-### 3. Configure your APIs
+### 3. Configure your identity
+
+Edit `_opensquad/_memory/company.md` with **your** brand info:
+
+- Company/channel name
+- Social media handles (@your.handle)
+- Target audience, tone of voice, content focus
+- Platforms where you publish
+
+Also edit `_opensquad/_memory/preferences.md` with your name and language.
+
+> [!NOTE]
+> `company.md` is the most important file — it is loaded on every squad run and defines **who you are** to the agents. Without filling it in, squads don't know who they're producing content for.
+
+Replace the logo at `materiais/logomarca.png` with your own (transparent PNG recommended).
+
+### 4. Configure your APIs
 
 Fill in the `.env` at the project root with your keys:
 
@@ -209,7 +241,7 @@ INSTAGRAM_USER_ID=your-id-here
 IMGBB_API_KEY=your-key-here
 ```
 
-### 4. Use it
+### 5. Use it
 
 Open the project in your IDE and type:
 
