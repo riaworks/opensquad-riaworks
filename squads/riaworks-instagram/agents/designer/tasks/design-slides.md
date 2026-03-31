@@ -25,7 +25,7 @@ DESIGN SYSTEM (apply consistently to ALL slides):
 - Positive data: #28A745 (green)
 - Negative data: #DC3545 (red)
 - Font: Modern sans-serif (Inter for headings, Outfit for body style), clean, professional
-- Header: "@jeanduarte.ai" left, "[DATE]" right, subtle gray text
+- Header: "@your_handle" left, "[DATE]" right, subtle gray text
 - Safe margins: 60px on all sides
 - Fill ENTIRE 1080x1440 canvas — no empty areas
 - Professional editorial/infographic style
@@ -68,7 +68,7 @@ DESIGN SYSTEM:
 BACKGROUND: #0D0D0D (dark)
 
 LAYOUT:
-- Header at top: "@jeanduarte.ai" left, "31.03.2026" right, gray (#777)
+- Header at top: "@your_handle" left, "31.03.2026" right, gray (#777)
 - Bold white headline below header
 - 4 data cards in 2x2 grid (red border for negative, green border for positive)
 - Each card: label on top (gray), large number (colored), sub-label below
@@ -101,7 +101,7 @@ import os, json, base64, time, urllib.request
 # API config
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 if not GEMINI_API_KEY:
-    with open("C:/__canal_riaworks/.env") as f:
+    with open(".env") as f:
         for line in f:
             if line.startswith("GEMINI_API_KEY="):
                 GEMINI_API_KEY = line.split("=", 1)[1].strip()

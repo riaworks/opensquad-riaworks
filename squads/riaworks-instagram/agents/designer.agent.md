@@ -57,7 +57,7 @@ A Diana deve criar um script Python (`generate_slides.py`) que:
    - Paleta: #FF6600 (accent), #0D0D0D (dark), #F5F5F5 (light), #28A745 (positivo), #DC3545 (negativo)
    - Fonte: "Geometric sans-serif — Inter for headings (Semibold 600), Outfit for body (Regular 400 to Medium 500). Bold 700 ONLY for hero numbers. Never Black/800/900."
    - Estilo: "Editorial sofisticado, sóbrio, NÃO agressivo. Ênfase por escala e espaço, não por peso."
-   - Header: Riaworks logo (small orange 3D cube icon in orange/gray + 'RIAworks' wordmark, ~120px) + "@jeanduarte.ai" em cinza sutil + data
+   - Header: Riaworks logo (small orange 3D cube icon in orange/gray + 'RIAworks' wordmark, ~120px) + "@your_handle" em cinza sutil + data
    - Margens: 60px de segurança
 
 4. **Texto exato no prompt:** Fornecer ao Gemini o texto EXATO que deve aparecer no slide, entre aspas. Especificar hierarquia (headline grande bold, body médio, caption pequeno). O Gemini renderiza o texto como parte da imagem.
@@ -85,7 +85,7 @@ A Diana deve criar um script Python (`generate_slides.py`) que:
    - Estilo consistente com outros slides
    Se qualquer verificação falhar, regenerar com prompt corrigido.
 
-9. **Logo Riaworks:** Para o slide CTA (último), incluir descrição do logo no prompt: "Small orange Riaworks logo at the bottom". Para outros slides, o header "@jeanduarte.ai" já serve como branding.
+9. **Logo Riaworks:** Para o slide CTA (último), incluir descrição do logo no prompt: "Small orange Riaworks logo at the bottom". Para outros slides, o header "@your_handle" já serve como branding.
 
 10. **Sem contadores de slide:** Nunca incluir "1/8" ou "Slide 3 de 7". O Instagram mostra navegação nativa.
 

@@ -45,18 +45,27 @@ Use this skill to generate **slides completos** para carrosséis Instagram — i
 
 Use um script Python para gerar cada slide. **NUNCA use curl direto no bash** — o output base64 é grande demais.
 
+**IMPORTANTE — Logo como input:** O logo da marca (`materiais/logomarca.png`) DEVE ser enviado como `inline_data` no request junto com o prompt de texto. Isso permite que o Gemini aplique o logo EXATO no slide, sem redesenhar. No prompt, instruir: "Use the attached logo exactly as-is in the top-left corner (~120px wide)."
+
 ```python
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import json, base64, os, urllib.request
 
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY") or open("C:/__canal_riaworks/.env").read().split("GEMINI_API_KEY=")[1].split("\n")[0]
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY") or open(".env").read().split("GEMINI_API_KEY=")[1].split("\n")[0]
 API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-image-preview:generateContent?key={GEMINI_API_KEY}"
 
+# Load logo as base64 to send with every request
+with open("materiais/logomarca.png", "rb") as f:
+    LOGO_B64 = base64.b64encode(f.read()).decode()
+
 def generate_slide(prompt, output_path, retries=2):
-    """Generate a complete slide image from prompt."""
+    """Generate a complete slide image from prompt. Sends logo as inline_data."""
     payload = json.dumps({
-        "contents": [{"parts": [{"text": prompt}]}],
+        "contents": [{"parts": [
+            {"inline_data": {"mime_type": "image/png", "data": LOGO_B64}},
+            {"text": prompt}
+        ]}],
         "generationConfig": {"responseModalities": ["TEXT", "IMAGE"]}
     }).encode()
 
@@ -116,8 +125,8 @@ Neste modo, o Gemini gera o slide **completo** — texto, layout, cores, dados, 
    - Manter padrão de cores consistente (alternância dark/light/accent)
    - Mesma família tipográfica descrita em cada prompt
 
-7. **Header com branding (logo + @jeanduarte.ai):**
-   - Incluir no prompt: "Small header at top: orange Riaworks logo (small 3D cube icon in orange/gray + 'RIAworks' wordmark, ~120px wide) on the left, '@jeanduarte.ai' in small subtle gray next to it, and date 'DD.MM.YYYY' on the right in subtle gray"
+7. **Header com branding (logo + @your_handle):**
+   - Incluir no prompt: "Small header at top: orange Riaworks logo (small 3D cube icon in orange/gray + 'RIAworks' wordmark, ~120px wide) on the left, '@your_handle' in small subtle gray next to it, and date 'DD.MM.YYYY' on the right in subtle gray"
    - Para slides CTA: usar logo centralizado no topo, sem header lateral
 
 8. **Slide 1 (Cover) — conteúdo no topo:**
@@ -139,7 +148,7 @@ DESIGN SYSTEM:
 - Spacing: generous gaps between sections (48-60px), breathing room between elements (24-32px)
 
 LAYOUT:
-- Small header at top: orange Riaworks logo (3D cube icon in orange/gray + 'RIAworks' wordmark, ~120px) on left, "@jeanduarte.ai" in small gray (#777) next to it, "[DATE]" on right in gray
+- Small header at top: orange Riaworks logo (3D cube icon in orange/gray + 'RIAworks' wordmark, ~120px) on left, "@your_handle" in small gray (#777) next to it, "[DATE]" on right in gray
 - [Describe the specific layout: headline position, data cards, body text areas, etc.]
 - Fill the ENTIRE 1080x1440 canvas with elegant spacing — no large empty areas
 - 60px safe margins on all sides
@@ -168,7 +177,7 @@ DESIGN SYSTEM:
 - Typography: Clean geometric sans-serif (Inter/Outfit), semibold for headline, regular for body. White text with subtle shadow.
 
 LAYOUT:
-- Small header at top: orange Riaworks logo (3D cube icon in orange/gray + 'RIAworks' wordmark) on left, "@jeanduarte.ai" in small gray, "[DATE]" on right
+- Small header at top: orange Riaworks logo (3D cube icon in orange/gray + 'RIAworks' wordmark) on left, "@your_handle" in small gray, "[DATE]" on right
 - HEADLINE positioned in the UPPER portion (top 50% of image) — semibold, not overly large
 - Supporting text below headline — regular weight, lighter color, generous line spacing
 - Data highlight cards in the lower-middle area with subtle borders
@@ -193,7 +202,7 @@ DESIGN SYSTEM:
 - Typography: Geometric sans-serif (Inter/Outfit), refined weights
 
 LAYOUT:
-- Small header: Riaworks logo + "@jeanduarte.ai" + date
+- Small header: Riaworks logo + "@your_handle" + date
 - Semibold headline at top (not overly bold)
 - Data visualization cards with generous spacing (subtle borders, clear numbers)
 - Key insight callout box
@@ -217,7 +226,7 @@ DESIGN SYSTEM:
 - Typography: Geometric sans-serif, refined weights
 
 LAYOUT:
-- Small header: Riaworks logo + "@jeanduarte.ai" + date in dark brown
+- Small header: Riaworks logo + "@your_handle" + date in dark brown
 - Semibold headline at top
 - Comparison cards or numbered list with generous spacing
 - Key quote/callout at bottom
@@ -243,7 +252,7 @@ LAYOUT:
 - Orange Riaworks logo (3D cube icon in orange/gray + 'RIAworks' wordmark) centered at top
 - Semibold headline centered with generous line spacing
 - Supporting text below in regular weight, lighter color
-- Orange CTA button: "Segue @jeanduarte.ai" with rounded corners and subtle glow
+- Orange CTA button: "Segue @your_handle" with rounded corners and subtle glow
 - Small text below button
 - Vertically centered content with balanced spacing
 
@@ -263,7 +272,7 @@ Após gerar cada slide, verificar visualmente:
 3. **Área preenchida:** O slide usa toda a área 1080x1440 com espaçamento elegante?
 4. **Dados corretos:** Números e percentuais estão renderizados corretamente?
 5. **Consistência:** O estilo visual é consistente com os outros slides do carrossel?
-6. **Logo + handle:** O logo Riaworks e @jeanduarte.ai aparecem no header?
+6. **Logo + handle:** O logo Riaworks e @your_handle aparecem no header?
 7. **Tipografia sóbria:** As fontes são refinadas, não agressivas/pesadas?
 
 **Se qualquer item falhar, regenerar o slide** com prompt ajustado.
@@ -277,19 +286,23 @@ Após gerar cada slide, verificar visualmente:
 import os, json, base64, time, urllib.request
 
 # Config
-GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY") or open("C:/__canal_riaworks/.env").read().split("GEMINI_API_KEY=")[1].split("\n")[0].strip()
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY") or open(".env").read().split("GEMINI_API_KEY=")[1].split("\n")[0].strip()
 API_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-image-preview:generateContent?key={GEMINI_API_KEY}"
 OUTPUT_DIR = "slides/png"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
+# Load logo to send with every request
+with open("materiais/logomarca.png", "rb") as f:
+    LOGO_B64 = base64.b64encode(f.read()).decode()
+
 DESIGN_SYSTEM = """
 DESIGN SYSTEM (apply consistently to ALL slides):
-- Accent: #FF6600 (Riaworks Orange)
+- Accent: [YOUR_ACCENT_COLOR] (e.g. #FF6600 Orange)
 - Dark bg: #0D0D0D, Light bg: #F5F5F5
 - Positive: #28A745, Negative: #DC3545
 - Typography: Clean geometric sans-serif (Inter for headings, Outfit for body). Refined, editorial, NOT aggressive or heavy.
 - Font weights: Semibold (600) for headings, Regular (400) to Medium (500) for body, Bold (700) ONLY for hero numbers. Never Black/800/900.
-- Header: Orange Riaworks logo (3D cube icon in orange/gray + 'RIAworks' wordmark, ~120px) left, "@jeanduarte.ai" small gray, "DD.MM.YYYY" right gray
+- Header: Your logo (attached as image) left, "@your_handle" small gray, "DD.MM.YYYY" right gray
 - Safe margins: 60px all sides
 - Section gaps: 48-60px, element gaps: 24-32px
 - Fill ENTIRE 1080x1440 canvas with elegant spacing
@@ -318,7 +331,10 @@ CONTENT: [exact text]
 
 def generate_slide(prompt, output_path, retries=2):
     payload = json.dumps({
-        "contents": [{"parts": [{"text": prompt}]}],
+        "contents": [{"parts": [
+            {"inline_data": {"mime_type": "image/png", "data": LOGO_B64}},
+            {"text": prompt}
+        ]}],
         "generationConfig": {"responseModalities": ["TEXT", "IMAGE"]}
     }).encode()
     for attempt in range(retries + 1):

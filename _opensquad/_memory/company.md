@@ -31,9 +31,13 @@ Exemplo:
 
 ## Idioma e Codificacao
 
-- **OBRIGATORIO:** Todo conteudo produzido DEVE ser em [Portugues do Brasil (pt-BR) / English / etc] com acentuacao correta e encoding UTF-8.
-- Esta regra aplica-se a TODOS os outputs: slides, captions, hashtags, roteiros, titulos, CTAs.
+# Idioma e Codificação
 
+- **OBRIGATÓRIO:** Todo conteúdo produzido DEVE ser em Português do Brasil (pt-BR) com acentuação correta e encoding UTF-8.
+- Usar acentos, cedilhas, tils e caracteres especiais corretamente: ã, õ, é, ê, í, ó, ú, ç, à, â, ô.
+- Exemplos: "não" (nunca "nao"), "conteúdo" (nunca "conteudo"), "código" (nunca "codigo"), "informação" (nunca "informacao").
+- Esta regra aplica-se a TODOS os outputs: slides, captions, hashtags, roteiros, títulos, CTAs.
+- Violação desta regra é critério BLOQUEANTE para aprovação.
 ## Tom de Voz
 
 - [Ex: Tecnico mas acessivel]
