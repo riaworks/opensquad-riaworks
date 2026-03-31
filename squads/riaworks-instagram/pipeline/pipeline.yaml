@@ -1,0 +1,74 @@
+pipeline:
+  name: "Canal Riaworks Instagram Pipeline"
+  description: "Pesquisa noticias tech/IA, gera angulos, cria conteudo para Instagram Feed e Reels, renderiza imagens e revisa qualidade"
+
+  steps:
+    - id: research-focus
+      file: steps/step-01-research-focus.md
+      type: checkpoint
+
+    - id: research
+      file: steps/step-02-research.md
+      type: agent
+      agent: researcher
+      execution: subagent
+      model_tier: powerful
+
+    - id: news-selection
+      file: steps/step-03-news-selection.md
+      type: checkpoint
+
+    - id: generate-angles
+      file: steps/step-04-generate-angles.md
+      type: agent
+      agent: instagram-feed-creator
+      execution: inline
+
+    - id: angle-selection
+      file: steps/step-05-angle-selection.md
+      type: checkpoint
+
+    - id: tone-selection
+      file: steps/step-06-tone-selection.md
+      type: checkpoint
+
+    - id: create-feed
+      file: steps/step-07-create-feed.md
+      type: agent
+      agent: instagram-feed-creator
+      execution: subagent
+      model_tier: powerful
+      format: instagram-feed
+
+    - id: create-reels
+      file: steps/step-08-create-reels.md
+      type: agent
+      agent: instagram-reels-creator
+      execution: subagent
+      model_tier: powerful
+      format: instagram-reels
+
+    - id: content-approval
+      file: steps/step-09-content-approval.md
+      type: checkpoint
+
+    - id: design-slides
+      file: steps/step-10-design-slides.md
+      type: agent
+      agent: designer
+      execution: inline
+
+    - id: visual-approval
+      file: steps/step-11-visual-approval.md
+      type: checkpoint
+
+    - id: review
+      file: steps/step-12-review.md
+      type: agent
+      agent: reviewer
+      execution: inline
+      on_reject: create-feed
+
+    - id: final-approval
+      file: steps/step-13-final-approval.md
+      type: checkpoint

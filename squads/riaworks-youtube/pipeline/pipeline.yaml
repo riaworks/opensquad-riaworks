@@ -1,0 +1,72 @@
+pipeline:
+  name: "Riaworks YouTube Content Pipeline"
+  description: "Pipeline news-based para produção de scripts YouTube e Shorts"
+  version: "1.0.0"
+
+  steps:
+    - id: step-01
+      name: "Foco da Pesquisa"
+      file: steps/step-01-research-focus.md
+      type: checkpoint
+
+    - id: step-02
+      name: "Pesquisa de Tendências"
+      file: steps/step-02-research.md
+      agent: researcher
+      execution: subagent
+
+    - id: step-03
+      name: "Seleção de Notícia"
+      file: steps/step-03-news-selection.md
+      type: checkpoint
+
+    - id: step-04
+      name: "Geração de Ângulos"
+      file: steps/step-04-generate-angles.md
+      agent: script-creator
+      execution: inline
+
+    - id: step-05
+      name: "Seleção de Ângulo"
+      file: steps/step-05-angle-selection.md
+      type: checkpoint
+
+    - id: step-06
+      name: "Criação de Script YouTube"
+      file: steps/step-06-create-script.md
+      agent: script-creator
+      execution: subagent
+      format: youtube-script
+      parallel_with: step-07
+
+    - id: step-07
+      name: "Criação de YouTube Shorts"
+      file: steps/step-07-create-shorts.md
+      agent: shorts-creator
+      execution: subagent
+      format: youtube-shorts
+      parallel_with: step-06
+
+    - id: step-08
+      name: "Aprovação do Conteúdo"
+      file: steps/step-08-content-approval.md
+      type: checkpoint
+
+    - id: step-09
+      name: "Revisão de Qualidade"
+      file: steps/step-09-review.md
+      agent: reviewer
+      execution: inline
+      on_reject: step-06
+
+    - id: step-10
+      name: "Aprovação Final"
+      file: steps/step-10-final-approval.md
+      type: checkpoint
+
+  checkpoints:
+    - step-01
+    - step-03
+    - step-05
+    - step-08
+    - step-10

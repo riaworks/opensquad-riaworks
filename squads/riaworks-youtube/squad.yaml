@@ -1,0 +1,48 @@
+squad:
+  code: riaworks-youtube
+  name: "Riaworks YouTube"
+  description: "Squad de produção de conteúdo YouTube sobre tecnologia e IA. Pesquisa tendências, gera ângulos criativos, produz scripts long-form e Shorts otimizados para retenção e CTR."
+  icon: "🎬"
+  version: "1.0.0"
+  created: "2026-03-26"
+  performance_mode: "alta-performance"
+
+  investigation:
+    enriched: true
+    profiles_analyzed: 3
+    date: "2026-03-26"
+    dir: "squads/riaworks-youtube/_investigations"
+
+  skills:
+    - web_search
+    - web_fetch
+
+  data:
+    - pipeline/data/research-brief.md
+    - pipeline/data/domain-framework.md
+    - pipeline/data/quality-criteria.md
+    - pipeline/data/output-examples.md
+    - pipeline/data/anti-patterns.md
+    - pipeline/data/tone-of-voice.md
+
+  pipeline:
+    entry: pipeline/pipeline.yaml
+    steps:
+      - pipeline/steps/step-01-research-focus.md
+      - pipeline/steps/step-02-research.md
+      - pipeline/steps/step-03-news-selection.md
+      - pipeline/steps/step-04-generate-angles.md
+      - pipeline/steps/step-05-angle-selection.md
+      - pipeline/steps/step-06-create-script.md
+      - pipeline/steps/step-07-create-shorts.md
+      - pipeline/steps/step-08-content-approval.md
+      - pipeline/steps/step-09-review.md
+      - pipeline/steps/step-10-final-approval.md
+    checkpoints:
+      - pipeline/steps/step-01-research-focus.md
+      - pipeline/steps/step-03-news-selection.md
+      - pipeline/steps/step-05-angle-selection.md
+      - pipeline/steps/step-08-content-approval.md
+      - pipeline/steps/step-10-final-approval.md
+    on_reject:
+      step-09-review.md: step-06-create-script.md

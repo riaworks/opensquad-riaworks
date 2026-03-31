@@ -1,0 +1,7 @@
+node_modules/
+_opensquad/_browser_profile/
+.env
+.playwright-mcp/
+squads/*/state.json
+temp_*
+*.log

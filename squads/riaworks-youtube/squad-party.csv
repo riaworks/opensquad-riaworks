@@ -1,0 +1,5 @@
+id,name,title,icon,execution,path
+researcher,Nina Notícia,Pesquisadora de Tendências,🔍,subagent,./agents/researcher.agent.md
+script-creator,Roberto Roteiro,Criador de Scripts YouTube,🎬,inline,./agents/script-creator.agent.md
+shorts-creator,Clara Clip,Criadora de YouTube Shorts,⚡,subagent,./agents/shorts-creator.agent.md
+reviewer,Marcos Métrica,Revisor de Qualidade,📊,inline,./agents/reviewer.agent.md

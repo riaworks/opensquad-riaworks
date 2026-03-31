@@ -1,0 +1,6 @@
+id,name,title,icon,squad,execution,path
+researcher,"Pedro Pesquisa","Pesquisador de Noticias Tech/IA","🔎",riaworks-instagram,subagent,./agents/researcher.agent.md
+instagram-feed-creator,"Iago Instagram","Criador de Conteudo Feed","📱",riaworks-instagram,inline,./agents/instagram-feed-creator.agent.md
+instagram-reels-creator,"Rafa Reels","Criador de Conteudo Reels","🎬",riaworks-instagram,subagent,./agents/instagram-reels-creator.agent.md
+designer,"Diana Design","Designer Visual de Carrosseis","🎨",riaworks-instagram,inline,./agents/designer.agent.md
+reviewer,"Vera Veredito","Revisora de Qualidade","✅",riaworks-instagram,inline,./agents/reviewer.agent.md
