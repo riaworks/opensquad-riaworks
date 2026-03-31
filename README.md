@@ -2,40 +2,38 @@
 
 Crie squads de agentes de IA que trabalham juntos — direto do seu IDE.
 
-<div align="center">
-
-```
+<table align="center"><tr><td>
+<pre align="center">
   ___  ___  ___  ___
- | $|| $|| $|| $|   100% GRATUITO
+ | $ || $ || $ || $ |   100% GRATUITO
  |___||___||___||___|   Zero custo. Zero licenca. Zero pegadinha.
   | |  | |  | |  | |
   |_|  |_|  |_|  |_|   Mas cada squad roda com os SEUS tokens.
-```
+</pre>
+</td></tr></table>
 
-### $\color{#FF6600}{\textsf{Este projeto e gratuito e open source.}}$
+> [!IMPORTANT]
+> **Este projeto e 100% gratuito e open source.**
+> Voce so gasta os tokens da sua propria API (Claude, Gemini, etc).
+> Nos nao cobramos nada. Nunca.
 
-$\color{#FF6600}{\textsf{Voce so gasta os tokens da sua propria API (Claude, Gemini, etc).}}$
+<table align="center"><tr><td>
+<pre align="center">
+       ( (
+        ) )
+     ._______.
+     |       |]
+     \       /    Se esse projeto te economizou horas de trabalho,
+      '-----'     considere pagar um cafe com tokens reais :)
+</pre>
+</td></tr></table>
 
-$\color{#FF6600}{\textsf{Nos nao cobramos nada. Nunca.}}$
+<h3 align="center">
+  <img src="https://img.shields.io/badge/Pix-pix%40riaworks.com.br-FF6600?style=for-the-badge&logo=pix&logoColor=white" alt="Pix: pix@riaworks.com.br" />
+</h3>
+<p align="center"><i>Qualquer valor ajuda a manter o projeto vivo e cafeinado.</i></p>
 
 ---
-
-```
-         ( (
-          ) )
-       ._______.
-       |       |]
-       \       /     Se esse projeto te economizou horas de trabalho,
-        `-----'      considere pagar um cafe com tokens reais :)
-```
-
-### $\color{#FF6600}{\textsf{Pix: pix@riaworks.com.br}}$
-
-*Qualquer valor ajuda a manter o projeto vivo e cafeinado.*
-
----
-
-</div>
 
 ## Como Usar
 
@@ -98,40 +96,38 @@ npx serve squads/<nome-do-squad>/dashboard
 
 Create AI squads that work together — right from your IDE.
 
-<div align="center">
-
-```
+<table align="center"><tr><td>
+<pre align="center">
   ___  ___  ___  ___
- | $|| $|| $|| $|   100% FREE
+ | $ || $ || $ || $ |   100% FREE
  |___||___||___||___|   No cost. No license. No catch.
   | |  | |  | |  | |
   |_|  |_|  |_|  |_|   But each squad runs on YOUR tokens.
-```
+</pre>
+</td></tr></table>
 
-### $\color{#FF6600}{\textsf{This project is free and open source.}}$
+> [!IMPORTANT]
+> **This project is 100% free and open source.**
+> You only spend your own API tokens (Claude, Gemini, etc).
+> We charge nothing. Ever.
 
-$\color{#FF6600}{\textsf{You only spend your own API tokens (Claude, Gemini, etc).}}$
+<table align="center"><tr><td>
+<pre align="center">
+       ( (
+        ) )
+     ._______.
+     |       |]
+     \       /    If this project saved you hours of work,
+      '-----'     consider buying us a coffee with real tokens :)
+</pre>
+</td></tr></table>
 
-$\color{#FF6600}{\textsf{We charge nothing. Ever.}}$
+<h3 align="center">
+  <img src="https://img.shields.io/badge/Pix-pix%40riaworks.com.br-FF6600?style=for-the-badge&logo=pix&logoColor=white" alt="Pix: pix@riaworks.com.br" />
+</h3>
+<p align="center"><i>Any amount helps keep the project alive and caffeinated.</i></p>
 
 ---
-
-```
-         ( (
-          ) )
-       ._______.
-       |       |]
-       \       /     If this project saved you hours of work,
-        `-----'      consider buying us a coffee with real tokens :)
-```
-
-### $\color{#FF6600}{\textsf{Pix: pix@riaworks.com.br}}$
-
-*Any amount helps keep the project alive and caffeinated.*
-
----
-
-</div>
 
 ## How to Use
 
