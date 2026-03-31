@@ -37,15 +37,39 @@ Crie squads de agentes de IA que trabalham juntos — direto do seu IDE.
 
 ## Como Usar
 
-Abra esta pasta no seu IDE e digite:
+### 1. Instale o Opensquad
+
+Se ainda nao tem o Opensquad instalado, clone o framework base:
+
+```bash
+git clone https://github.com/renatoasse/opensquad.git
+```
+
+> [!TIP]
+> Saiba mais sobre o Opensquad em [github.com/renatoasse/opensquad](https://github.com/renatoasse/opensquad)
+
+### 2. Instale este squad pack
+
+Abra o projeto Opensquad no seu IDE com uma LLM que tenha acesso ao terminal (recomendamos **Claude Code**) e peca:
+
+```
+Acesse https://github.com/riaworks/opensquad-riaworks e faca a
+instalacao, merge e registro dos squads no meu projeto Opensquad.
+```
+
+A LLM vai clonar este repositorio, copiar os squads, skills e configuracoes para dentro do seu projeto Opensquad e registrar tudo automaticamente.
+
+### 3. Use
+
+Abra o projeto no seu IDE e digite:
 
 ```
 /opensquad
 ```
 
-Isso abre o menu principal. De lá você pode criar squads, executá-los e mais.
+Isso abre o menu principal. De la voce pode criar squads, executa-los e mais.
 
-Você também pode ser direto — descreva o que quer em linguagem natural:
+Voce tambem pode ser direto — descreva o que quer em linguagem natural:
 
 ```
 /opensquad crie um squad para escrever posts no LinkedIn sobre IA
@@ -57,10 +81,10 @@ Você também pode ser direto — descreva o que quer em linguagem natural:
 Digite `/opensquad` e escolha "Criar squad" no menu, ou seja direto:
 
 ```
-/opensquad crie um squad para [o que você precisa]
+/opensquad crie um squad para [o que voce precisa]
 ```
 
-O Arquiteto fará algumas perguntas, projetará o squad e configurará tudo automaticamente.
+O Arquiteto fara algumas perguntas, projetara o squad e configurara tudo automaticamente.
 
 ## Executar um Squad
 
@@ -70,11 +94,11 @@ Digite `/opensquad` e escolha "Executar squad" no menu, ou seja direto:
 /opensquad execute o squad <nome-do-squad>
 ```
 
-O squad executa automaticamente, pausando apenas nos checkpoints de decisão.
+O squad executa automaticamente, pausando apenas nos checkpoints de decisao.
 
-## Escritório Virtual
+## Escritorio Virtual
 
-O Escritório Virtual é uma interface visual 2D que mostra seus agentes trabalhando em tempo real.
+O Escritorio Virtual e uma interface visual 2D que mostra seus agentes trabalhando em tempo real.
 
 **Passo 1 — Gere o dashboard** (no seu IDE):
 
@@ -131,7 +155,31 @@ Create AI squads that work together — right from your IDE.
 
 ## How to Use
 
-Open this folder in your IDE and type:
+### 1. Install Opensquad
+
+If you don't have Opensquad installed yet, clone the base framework:
+
+```bash
+git clone https://github.com/renatoasse/opensquad.git
+```
+
+> [!TIP]
+> Learn more about Opensquad at [github.com/renatoasse/opensquad](https://github.com/renatoasse/opensquad)
+
+### 2. Install this squad pack
+
+Open the Opensquad project in your IDE with an LLM that has terminal access (we recommend **Claude Code**) and ask:
+
+```
+Access https://github.com/riaworks/opensquad-riaworks and install,
+merge and register the squads into my Opensquad project.
+```
+
+The LLM will clone this repository, copy the squads, skills and configurations into your Opensquad project and register everything automatically.
+
+### 3. Use it
+
+Open the project in your IDE and type:
 
 ```
 /opensquad
@@ -183,3 +231,29 @@ npx serve squads/<squad-name>/dashboard
 ```
 
 **Step 3 —** Open `http://localhost:3000` in your browser.
+
+---
+
+## License
+
+MIT License
+
+Copyright (c) 2026 Riaworks
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
